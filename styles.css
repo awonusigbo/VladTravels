@@ -2,12 +2,18 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Exo 2", sans-serif;
 }
 
 nav{
     padding-block: 1rem;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background-color: #fff;
 }
+
 .gen_layout{
     max-width: 1000px;
     margin: auto;
@@ -22,25 +28,29 @@ nav{
 .inner_nav > h1{
     text-transform: uppercase;
     font-size: 2rem;
-}.inner_nav > h1 > span{
+}
+
+.inner_nav > h1 > span{
     color: #3d7291;
 }
 
-
+.hamburger, #toggle{
+    display: none;
+}
 .nav_items{
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-.nav_items >a{
+.nav_items > a{
     text-decoration: none;
     color: black;
     font-weight: 800;
     text-transform: capitalize;
 }
 
-.nav_items >button{
+.nav_items > button{
     padding: .6rem 1.5rem;
     border-radius: 25px;
     font-size: 14px;
@@ -53,11 +63,17 @@ nav{
     font-weight: 700;
     border: 2px solid;
 }
+
 .btn2{
     border: none;
     color: white;
     background-color: #5649a3;
 }
+
+.sec_one{
+    padding-top: 5rem;
+}
+
 .bg_image{
     height: 60vh;
     border-radius: 20px;
@@ -69,6 +85,7 @@ nav{
     align-items: center;
     justify-content: center;
 }
+
 .bg_content{
     width: 600px;
     color: white;
@@ -83,10 +100,12 @@ nav{
     margin-block: 1rem;
     font-weight: 100;
 }
+
 .bg_button_container{
     width: 200px;
     margin: auto;
 }
+
 .bg_button_container > button{
     width: 100%;
     padding: .6rem 1rem;
@@ -98,9 +117,10 @@ nav{
 /* styling for sec two */
 .sec_two{
     background-color: rgb(243 247 249);
+    padding-bottom: 1rem;
 }
 .bookings{
-    max-width: 850px;
+    max-width: 800px;
     margin: auto;
     display: flex;
     gap: 15px;
@@ -117,12 +137,29 @@ nav{
     margin-top: -2rem;
 }
 
-.book_card >img{
+.img_wrap{
+    position: relative;
+}
+
+.img_wrap > span{
+    top: -2px;
+    right: -3px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.img_wrap >img{
     width: 100%;
     border-radius: 10px;
 }
 .book_card_content{
-    width: 270px;
+    width: 200px;
     margin: auto;
 }
 
@@ -131,18 +168,14 @@ nav{
 }
 .book_card_content >p{
     margin-block: 15px;
-    width: 300px;
+    width: 200px;
     font-size: 14px;
     opacity: .3;
 }
-.book_card_content > button{
+
+.btn_btn{
     width: 100%;
-    padding: .6rem 1rem;
-    border-radius: 25px;
-}
-.book_card_content > button{
-    width: 100%;
-    padding: .6rem 1rem;
+    padding: .5rem 1rem;
     border-radius: 25px;
     border: 1px solid #3d7291;
     background-color: transparent;
@@ -150,4 +183,205 @@ nav{
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 600;
+}
+
+/* styling for progress */
+.progress{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 650px;
+    margin: 4rem auto;
+    gap: 3rem;
+}
+
+.progress_chart{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex: 1;
+}
+
+.progress_chart >span{
+    background-color: white;
+    border-radius: 10px;
+    width: 65px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress_chart >span >i{
+    color: #3d7291;
+    font-size: 20px;
+}
+
+.chart_num > h6{
+    color: #3d7291;
+    font-size: 22px;
+}
+
+/* styling for sec three */
+.locations{
+    margin-block: 3rem;
+}
+
+.locations > h2{
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.locations > p{
+    text-align: center;
+    width: 700px;
+    margin: 1.7rem auto;
+    opacity: .3;
+}
+
+.location_grid{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.location_grid_card{
+    border-radius: 10px;
+    padding: .6rem;
+    background-color: white;
+    box-shadow: .1rem .2rem 10px rgb(198, 197, 197);
+}
+
+.grid_card_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card_top_profile{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.card_top_profile > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+.card_top_profile > h5 {
+    text-transform: capitalize;
+}
+
+.card_top_stat > span{
+    text-align: end;
+    display: block;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.card_top_stat > h6{
+    color: #3d7291;
+    font-weight: 800;
+}
+
+.location_grid_card > img{
+    width: 100%;
+    margin-block: .6rem;
+}
+
+.grid_card_body {
+    padding-inline: .5rem;
+}
+
+.grid_card_body > h1{
+    font-size: 16px;
+    text-transform: capitalize;
+}
+.grid_card_body > p{
+    opacity: .4;
+    font-size: 14px;
+    margin-block: 1rem;
+}
+
+/* responsive code */
+@media(min-width: 320px) and (max-width: 460px){
+    .inner_nav{
+        width: calc(100% - 30px);
+    }
+
+    .hamburger{
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: #3d7291;
+    }
+    .nav_right {
+        position: absolute;
+        width: 340px;
+        padding: 1.8rem;
+        top: 4.4rem;
+        right: 3px;
+        z-index: 1;
+        background-color: #3d7291;
+        opacity: 0.97;
+        border-bottom: 4px solid #fff;
+        transform: translate(100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05);
+    }
+
+    .nav_items{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav_items > a {
+        width: 100%;
+        color: black;
+        font-size: 18px;
+        padding: 0.6rem;
+        text-align: left;
+        border-bottom: 4px solid white;
+    }
+
+    #toggle:checked + .nav_right{
+        display: block;
+        transform: none;
+    }
+
+    .bg_image{
+        border-radius: 0;
+    }
+
+    .bookings{
+        flex-direction: column;
+        /* overflow-x: scroll; */
+        width: calc(100% - 40px);
+    }
+
+    .book_card{
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .progress{
+        /* flex-direction: column; */
+        grid-template-columns: repeat(2, 1fr);
+        width: calc(100% - 40px);
+    }
+
+    .locations > p{
+        width: 100px;
+    }
+
+    .location_grid{
+        grid-template-columns: 1fr;
+        max-width: 330px;
+        margin: auto;
+    }
+
+    .location_grid_card{
+        width: 100%;
+    }
 }
